@@ -1,10 +1,16 @@
 ﻿using System;
 
 namespace DifferentWaysToWriteMethods
-{
-    class Program
+{  public abstract class Wish
     {
-        
+        abstract public void SayMorning();
+    }
+   public class Program:Wish
+    {
+        public  override void SayMorning()//abstract method
+        {
+            Console.WriteLine("Good Morning");
+        }
         static int Sum(int x,int y)//static method with parameter
         {
             int a = x;
@@ -21,8 +27,10 @@ namespace DifferentWaysToWriteMethods
         {
             Program p = new Program();
             int r = Program.Sum(10,20);
-            Console.WriteLine(r);
-            p.Greet();
+            Console.WriteLine(r);//30
+            p.Greet();//hello interns
+            Wish w = new Program();
+            w.SayMorning();//good morning
             
         }
     }
